@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import 'mixin';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: $body-bg;
+}
+
+.navigation {
+    background-color: $header-bg;
+    height: 65px;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    input {
+        height: 45px;
+        width: 720px;
+        background: #828a94;
+        border: none;
+        color: $white;
+        padding-left: 20px;
+        &::placeholder {
+            color: $white;
+            opacity: 0.6;
+        }
+    }
+    .city-search-button {
+        display: none;
+        margin-left: 10px;
+        height: 45px;
+        @include mq(1199px) {
+            display: inline-block;
+        }
+    }
+}

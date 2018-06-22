@@ -1,0 +1,42 @@
+<nav>
+  <div class="navigation container-fluid">
+    <form (ngSubmit)='onSubmit(form)' #form="ngForm">
+      <input type="text" ngModel name="city" placeholder="Search your city">
+      <button type="submit" class="city-search-button btn btn-primary">Search</button>
+    </form>
+  </div>
+</nav>
+<h2>You're currently in {{ myWeather.cityName }}</h2>
+<div class="container">
+  <div class="current-weather">
+    <div class="city-info">
+        <h4>{{myWeather.cityName}} <span>{{todayDate}}</span></h4>
+    </div>
+    <div class="temp-details">
+      <span class="temp">{{myWeather.temp | number : '1.0-0'}}&deg;</span>
+      <span class="weather-detail">{{myWeather.weatherKind}}</span>
+    </div>
+    <div class="more-details">
+      <span>Humidity: {{myWeather.humidity}}%</span>
+      <span>Wind: {{myWeather.wind}}km/h</span>
+    </div>
+  </div>
+</div>
+<h2 *ngIf="searchedWeather">Current weather for {{ searchedWeather.cName }}</h2>
+<div class="container">
+  <div *ngIf="searchedWeather" [routerLink]="['forecast']" class="current-weather">
+    <!-- <div class="close-button" ng-click="closeForecast()"></div> -->
+    <div class="city-info">
+        <h4>{{searchedWeather.cName}} <span>{{todayDate}}</span></h4>
+    </div>
+    <div class="temp-details">
+      <span class="temp">{{searchedWeather.cTemp | number : '1.0-0'}}&deg;</span>
+      <span class="weather-detail">{{myWeather.weatherKind}}</span>
+    </div>
+    <div class="more-details">
+      <span>Humidity: {{searchedWeather.humidityInfo}}%</span>
+      <span>Wind: {{searchedWeather.windSpeed}}km/h</span>
+    </div>
+  </div>
+</div>
+

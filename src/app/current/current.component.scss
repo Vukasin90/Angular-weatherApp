@@ -1,0 +1,99 @@
+@import '../../scss/vars';
+@import '../../scss/mixin';
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.current-weather {
+    position: relative;
+    width: 400px;
+    height: 90px;
+    background: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    margin-top: 50px;
+    cursor: pointer;
+    @include mq(430px) {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+.city-info {
+    display: inline-block;
+    text-align: center;
+    @include mq(430px) {
+        margin: 16px 0;
+    }
+}
+
+h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: $txt;
+    span {
+        display: block;
+        font-size: 0.7rem;
+        font-weight:normal;
+        opacity: 0.6;
+    }
+}
+
+.more-details {
+    display: inline-block;
+    span {
+        display: block;
+        font-weight:normal;
+        opacity: 0.6;
+    }
+    @include mq(430px) {
+        margin-bottom: 16px;
+    }
+}
+.temp-details {
+    text-align: center;
+    @include mq(430px) {
+        margin: 30px 0;
+    }
+}
+
+.temp {
+    display: block;
+    font-size: 2rem;
+    line-height: 0.6;
+    font-weight: bold;
+    color: $txt;
+}
+
+.weather-detail {
+    font-size: 0.7rem;
+    font-weight:normal;
+        opacity: 0.6;
+}
+
+// .close-button {
+//     position: absolute;
+//     right: 0;
+//     top: -12px;
+//     width: 20px;
+//     height: 2px;
+//     background: $black;
+//     transform: rotate(43deg);
+//     &::after {
+//         content: '';
+//         display: block;
+//         width: 20px;
+//         height: 2px;
+//         background: $black;
+//         transform: rotate(-90deg);
+//     }
+// }
